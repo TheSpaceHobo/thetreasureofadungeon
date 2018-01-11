@@ -1,4 +1,3 @@
-
 var inventory = [];
 var founditem;
 function treasureitem(id, name, price, rarity, texture){
@@ -7,7 +6,7 @@ function treasureitem(id, name, price, rarity, texture){
   this.rarity = rarity;
   this.price = price;
   this.id = id;
-  this.display = $("#inventoryhtml").append( "<div onClick="+this.sell+"class=tooltip title="+""+"Price:_"+this.price+"Name:_"+this.name+">"+""+"<img src="+this.texture+" width = 64/>"+"</div>");
+  this.display = function(){$("#inventoryhtml").append( "<div onClick="+this.sell+"class=tooltip title="+""+"Price:_"+this.price+"Name:_"+this.name+">"+""+"<img src="+this.texture+" width = 64/>"+"</div>")};
   this.index = function(){
     return inventory.indexOf(this.display);
   }
@@ -56,6 +55,7 @@ var alltreasure = [
   diamondkatana,
   obsidiankatana
 ];
+$("#inventoryhtml").append(dubloon.display)
 var money = 100;
 $("#getmoneybutton").click(function(){
   money += 5;
