@@ -6,7 +6,7 @@ function treasureitem(id, name, price, rarity, texture){
   this.rarity = rarity;
   this.price = price;
   this.id = id;
-  this.display = function(){$("#inventoryhtml").append( "<div onClick="+this.sell+"class=tooltip title="+""+"Price:_"+this.price+"Name:_"+this.name+">"+""+"<img src="+this.texture+" width = 64/>"+"</div>")};
+  this.display = "<div onClick="+this.sell+"class=tooltip title="+""+"Price:_"+this.price+"Name:_"+this.name+">"+""+"<img src="+this.texture+" width = 64/>"+"</div>";
   this.index = function(){
     return inventory.indexOf(this.display);
   }
