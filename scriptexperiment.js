@@ -1,26 +1,23 @@
-var inventory = [];
-var founditem;
+$( "div" ).click(function() {
+  // `this` is the DOM element that was clicked
+  var index = $( "div" ).index( this );
+  $( "span" ).text( "That was div index #" + index );
+});
 function treasureitem(id, name, price, rarity, texture){
   this.texture = texture;
   this.name = name;
   this.rarity = rarity;
   this.price = price;
   this.id = id;
-  this.display = "<div onClick="+this.sell+"class=tooltip title="+""+"Price:_"+this.price+"Name:_"+this.name+">"+""+"<img src="+this.texture+" width = 64/>"+"</div>";
-  this.index = function(){
-    return inventory.indexOf(this.display);
-  }
-  this.sell = function(){
-    if (this.index() >  1){
-      inventory.splice(this.index(), 1)
-    } else {
-      console.log("Sorry, This Cannot Be Sold")
-    }
-  }
+  this.findme = document.getElementById(this.id);
+  this.inventoryslots = Array.prototype.slice.call(document.getElementById('inventoryhtml').children);
+  this.inventoryref = document.getElementById(this.id);
+  this.sell = this.inventoryslots.indexOf(this.inventoryref);
+  this.sellsell = console.log(this.sell);
+  this.display = "<div id="+ this.id +" onClick="+ this.sell+" "+"class=inventory"+" "+"title="+""+"Price:_"+this.price+"Name:_"+this.name+">"+""+"<img onClick="+console.log("OKI THEN")+" src="+this.texture+" width = 64/>"+"</div>";
 }
-
 var antimatterkatana = new treasureitem("antikatana","Antimatter_Katana",150,"Legendary","Anitmatter-Katana.gif");
-var dubloon = new treasureitem("coin","Dubloon",10,"Common","dubloon256.gif");
+var dubloon = new treasureitem("coin","Dubloon",10,"Common","images/dubloon256.gif");
 var chalice = new treasureitem("goldcup","Chalice",20,"Common","chalice.gif");
 var goldbar = new treasureitem("goldbar","Bar_Of_Gold",50,"Uncommon","goldbar.gif");
 var diamond = new treasureitem("diamond","Diamond",45,"Uncommon","diamond.gif");
@@ -56,6 +53,7 @@ var alltreasure = [
   obsidiankatana
 ];
 $("#inventoryhtml").append(dubloon.display)
+console.log(dubloon.sell)
 var money = 100;
 $("#getmoneybutton").click(function(){
   money += 5;
@@ -63,8 +61,10 @@ $("#getmoneybutton").click(function(){
 $("#homebutton").click(function(){
   showhomeitems();
 });
+alert( $("#inventoryhtml").index(dubloon.findme))
 function animate(){
   requestAnimationFrame(animate);
   $("#moneydisplay").html(money);
 }
 animate();
+
