@@ -73,13 +73,21 @@ var alltreasure = [
   diamondkatana,
   obsidiankatana
 ];
+if (window.localStorage) {
+  alltreasure.forEach(function (item) {
+    item.amount = localStorage.getItem(item.id);
+    money = localStorage.getItem('money');
+  })
+}
    alltreasure.forEach(function(item){item.addme()})
    alltreasure.forEach(function(item){
    $('#'+item.id).click(function(){item.checksell()})
    })
-$("#get").click(function(){
-   dubloon.recieve();
-   $("#get").remove();
+$("#save").click(function(){
+    alltreasure.forEach(function(item){
+      localStorage.setItem(item.id,item.amount); // sets each item its own storage item and id name
+      localStorage.setItem('money',money);
+    })
 })
 var money = 100;
 $("#getmoneybutton").click(function(){
