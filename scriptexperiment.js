@@ -4,7 +4,7 @@ function treasureitem(id, name, price, rarity, texture){
    this.rarity = rarity;
    this.id = id;
    this.price = price;
-   this.amount = 0;
+   this.amount = 1;
    this.resetthesellingbutton = function(){
    this.display = "<div class=container><div class="+this.id+" id="+this.id+" title="+this.name+" ><img src="+this.texture+" width=64px /><div class=itemtext style=font-size:10px >"+this.displayamount()+"</div></div></div>";
    // resets the display variable, to output the new display
@@ -35,6 +35,9 @@ function treasureitem(id, name, price, rarity, texture){
    this.recieve = function(){
       this.amount += 1;
       alltreasure.forEach(function(item){item.resetthesellingbutton()})
+   }
+   this.save = function(){
+     window.localStorage.setItem(this.id,this.amount)
    }
 }
 var antimatterkatana = new treasureitem("antikatana","Antimatter_Katana",150,"Legendary","Anitmatter-Katana.gif");
@@ -73,26 +76,36 @@ var alltreasure = [
   diamondkatana,
   obsidiankatana
 ];
-if (window.localStorage) {
-  alltreasure.forEach(function (item) {
-    item.amount = localStorage.getItem(item.id);
-    money = localStorage.getItem('money');
-  })
-}
    alltreasure.forEach(function(item){item.addme()})
    alltreasure.forEach(function(item){
    $('#'+item.id).click(function(){item.checksell()})
    })
-$("#save").click(function(){
-    alltreasure.forEach(function(item){
-      localStorage.setItem(item.id,item.amount); // sets each item its own storage item and id name
-      localStorage.setItem('money',money);
-    })
-})
-var money = 100;
+   $(document).ready(function(){
+     $("#save").click(function(){
+         alltreasure.forEach(function(item){
+           item.save(); // sets each item its own storage item and id name
+           if(money == 'NaN'){
+             money = 100;
+           } else {
+           localStorage.setItem('money',money);
+           }
+         })
+     })
+   })
+   var money;
 $("#getmoneybutton").click(function(){
   money += 5;
 });
+alltreasure.forEach(function (item) {
+  item.amount = parseInt(window.localStorage.getItem(item.id));
+  item.resetthesellingbutton();
+  if (window.localStorage['money'] === 'NaN'){
+    money = 100;
+} else {
+    money = parseInt(window.localStorage.getItem('money'));
+}
+})
+alltreasure.forEach(function(item){if(window.localStorage.getItem(item.id) === 'NaN'){item.amount = 0; item.resetthesellingbutton()}})
 function animate(){
   requestAnimationFrame(animate);
   $("#moneydisplay").html(money);
