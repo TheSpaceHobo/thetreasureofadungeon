@@ -69,7 +69,7 @@ var alltreasure = [
    rainbowknife = new treasureitem("rainbowknife","Oxidized_Knife",200,"Epic","Oxidized-knife.gif"),
    bootknife = new treasureitem("bootknife","Boot_Knife",90,"Common","Boot-knife.gif"),
    machete = new treasureitem("machete","Machete",50,"Common","Machete.gif"),
-   throwingknife = new treasureitem("throwingknife","Throwing_Knife",5,"Common","Throwing-knife.gif"),
+   throwingknife = new treasureitem("throwingknife","Throwing_Knife",5,"Common","Throwing-Knife.gif"),
    arrowheadknife = new treasureitem("arrowheadknife","Arrowhead_knife",60,"Common","Arrow-knife.gif"),
    specialknife = new treasureitem("specialknife","Scourge_Of_Titanium",450,"Legendary","Titanium-knife.gif")
 ];
