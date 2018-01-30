@@ -6,7 +6,7 @@ ol {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #468189;
 }
 
 li {
@@ -29,13 +29,13 @@ li:hover {
 }
 button {
   Color: black;
-  background-color: lightgray;
-  border:2px solid black;
+  background-color: #468189;
+  border:2px solid #77ACA2;
   margin:15px;
   padding:5px;
 }
 body {
-  background-color: Gray;
+  background-color: #031926;
 }
 div {
   display:inline;
