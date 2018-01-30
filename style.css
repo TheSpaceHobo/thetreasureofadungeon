@@ -42,17 +42,16 @@ div {
   align: center;
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
 .container{
-  position: relative;
+    position: relative;
     text-align: center;
     color: white;
 }
 .itemtext {
   position: absolute;
-  top: 8px;
-  right: 16px;
+  bottom: 16px;
+  right: 20px;
+}
+.gmi {
+  padding: 10px;
 }
