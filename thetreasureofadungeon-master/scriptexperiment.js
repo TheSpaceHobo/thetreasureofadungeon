@@ -75,9 +75,9 @@ var alltreasure = [
    // ----------------------------------------------------------------------------------------------------------------------
    deagle = new treasureitem("deagle","Desert_Eagle",100,"Uncommon","Deagle.gif"),
    compact = new treasureitem("compact",".45_Caliber_Compact",100,"Uncommon","45compact.gif"),
-   revolver = new treasureitem("revolver","Revolver",150,"Uncommon",".gif"),
-   es57 = new treasureitem("es57","ES57",80,"Common",".gif"),
-   uzi = new treasureitem("uzi","Uzi",120,"Uncommon",".gif"),
+   revolver = new treasureitem("revolver","Revolver",150,"Uncommon","revolver.gif"),
+   es57 = new treasureitem("es57","ES57",80,"Common","es57.gif"),
+   uzi = new treasureitem("uzi","Uzi",120,"Uncommon","uzi.gif"),
    tacticalpistol  = new treasureitem("tacticalpistol",".45_Caliber_Tactical",100,"Uncommon",".gif"),
    glock = new treasureitem("glock","Glock",100,"Uncommon",".gif"),
    phaser = new treasureitem("phaser","Phaser",300,"Rare",".gif"),
