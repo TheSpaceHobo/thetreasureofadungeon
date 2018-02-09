@@ -192,4 +192,3 @@ function animate(){
   $("#moneydisplay").html(money);
 }
 animate();
-
