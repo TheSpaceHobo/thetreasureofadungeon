@@ -71,7 +71,22 @@ var alltreasure = [
    machete = new treasureitem("machete","Machete",50,"Common","Machete.gif"),
    throwingknife = new treasureitem("throwingknife","Throwing_Knife",5,"Common","Throwing-Knife.gif"),
    arrowheadknife = new treasureitem("arrowheadknife","Arrowhead_knife",60,"Common","Arrow-knife.gif"),
-   specialknife = new treasureitem("specialknife","Scourge_Of_Titanium",450,"Legendary","Titanium-knife.gif")
+   specialknife = new treasureitem("specialknife","Scourge_Of_Titanium",450,"Legendary","Titanium-knife.gif"),
+   // ----------------------------------------------------------------------------------------------------------------------
+   deagle = new treasureitem("deagle","Desert_Eagle",100,"Uncommon","Deagle.gif"),
+   compact = new treasureitem("compact",".45_Caliber_Compact",100,"Uncommon","45compact.gif"),
+   revolver = new treasureitem("revolver","Revolver",150,"Uncommon","revolver.gif"),
+   es57 = new treasureitem("es57","ES57",80,"Common","es57.gif"),
+   uzi = new treasureitem("uzi","Uzi",120,"Uncommon","uzi.gif"),
+   tacticalpistol  = new treasureitem("tacticalpistol",".45_Caliber_Tactical",100,"Uncommon",".gif"),
+   glock = new treasureitem("glock","Glock",100,"Uncommon",".gif"),
+   phaser = new treasureitem("phaser","Phaser",300,"Rare",".gif"),
+   laser = new treasureitem("laser","Laser_pistol",310,"Rare",".gif"),
+   taser = new treasureitem("taser","Taser",110,"Uncommon",".gif"),
+   electrick = new treasureitem("electrick","Electrick",450,"Legendary",".gif"),
+   handcannon = new treasureitem("handcannon","Handcannon",150,"Uncommon",".gif"),
+   damagedpistol = new treasureitem("damagedpistol","Rusty_Pistol",10,"Common",".gif"),
+   crapgun = new treasureitem("crapgun","Badly_Made_Gun",1,"Common",".gif"),
 ];
 var katanacase = [
   durasteelkatana,
@@ -81,6 +96,21 @@ var katanacase = [
   ironkatana,
   diamondkatana,
   obsidiankatana,
+]
+var knifecase = [
+  swissknife,
+  tomahawk,
+  bowieknife,
+  crimsonkarambit,
+  karambit,
+  combatknife,
+  switchblade,
+  rainbowknife,
+  bootknife,
+  machete,
+  throwingknife,
+  arrowheadknife,
+  specialknife
 ]
    alltreasure.forEach(function(item){item.addme()})
    alltreasure.forEach(function(item){$('#'+item.id).click(function(){item.checksell()})})
@@ -115,25 +145,37 @@ var katanacase = [
      $("#homebutton").click(function(){
        $(".inventoryitem").hide()
        $(".cases").hide()
+       $(".settings").hide()
      })
      $("#settingsbutton").click(function(){
        $(".inventoryitem").hide()
        $(".cases").hide()
+       $(".settings").show()
      })
      $("#inventorybutton").click(function(){
        $(".inventoryitem").show()
        $(".cases").hide()
+       $(".settings").hide()
      })
      $("#casebutton").click(function(){
        $(".inventoryitem").hide()
        $(".cases").show()
+       $(".settings").hide()
      })
      $("#katanacasebutton").click(function(){
        if (money >= 250){
-       katanacase[(Math.floor(Math.random()*8))].recieve(); // selects a random item from the katana case and adds it to the inventory
+       katanacase[(Math.floor(Math.random()*katanacase.length))].recieve(); // selects a random item from the katana case and adds it to the inventory
        money -= 250;
-       $(".inventoryitem").show()
-       $(".cases").hide()
+       $(".inventoryitem").hide()
+     } else {
+       console.log("Not enough money my dude, Sorry.")
+     }
+     })
+     $("#knifecasebutton").click(function(){
+       if (money >= 100){
+       knifecase[(Math.floor(Math.random()*knifecase.length))].recieve(); // selects a random item from the katana case and adds it to the inventory
+       money -= 100;
+       $(".inventoryitem").hide()
      } else {
        console.log("Not enough money my dude, Sorry.")
      }
@@ -144,8 +186,10 @@ $("#getmoneybutton").click(function(){
   money += 5;
 });
 $(".cases").hide()
+    $(".settings").hide()
 function animate(){
   requestAnimationFrame(animate);
   $("#moneydisplay").html(money);
 }
 animate();
+
