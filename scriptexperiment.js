@@ -41,7 +41,7 @@ function treasureitem(id, name, price, rarity, texture){
    }
 }
 var alltreasure = [
-   antimatterbroadsword = new treasureitem("antikatana","Antimatter_Broadsword",500,"Legendary","Antimatter-Broadsword.gif"),
+   antimatterbroadsword = new treasureitem("antikatana","Antimatter_Broadsword",700,"Legendary","Antimatter-Broadsword.gif"),
    dubloon = new treasureitem("coin","Dubloon",10,"Common","dubloon256.gif"),
    chalice = new treasureitem("goldcup","Chalice",20,"Common","chalice.gif"),
    goldbar = new treasureitem("goldbar","Bar_Of_Gold",50,"Uncommon","goldbar.gif"),
