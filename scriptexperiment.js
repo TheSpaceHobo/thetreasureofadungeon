@@ -166,7 +166,11 @@ var knifecase = [
      $("#katanacasebutton").click(function(){
        if (money >= 250){
        katanacase[(Math.floor(Math.random()*katanacase.length))].recieve(); // selects a random item from the katana case and adds it to the inventory
-       money -= 250;
+      katanacase[(Math.floor(Math.random()*katanacase.length))].recieve(); // selects a random item from the katana case and adds it to the inventory
+       katanacase[(Math.floor(Math.random()*katanacase.length))].recieve(); // selects a random item from the katana case and adds it to the inventory
+       katanacase[(Math.floor(Math.random()*katanacase.length))].recieve(); // selects a random item from the katana case and adds it to the inventory
+        katanacase[(Math.floor(Math.random()*katanacase.length))].recieve(); // selects a random item from the katana case and adds it to the inventory
+         money -= 250;
        $(".inventoryitem").hide()
      } else {
        console.log("Not enough money my dude, Sorry.")
