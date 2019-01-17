@@ -96,6 +96,7 @@ var katanacase = [
   ironkatana,
   diamondkatana,
   obsidiankatana,
+  antimatterbroadsword
 ]
 var knifecase = [
   swissknife,
