@@ -89,13 +89,7 @@ var alltreasure = [
    crapgun = new treasureitem("crapgun","Badly_Made_Gun",1,"Common",".gif"),
 ];
 var katanacase = [
-  durasteelkatana,
-  argoncrystalkatana,
-  heliumcrystalkatana,
   practicekatana,
-  ironkatana,
-  diamondkatana,
-  obsidiankatana,
   antimatterbroadsword
 ]
 var knifecase = [
