@@ -16,7 +16,7 @@ function treasureitem(id, name, price, rarity, texture){
    if(this.amount >= 1){
    this.amount -= 1;
    money += this.price;
-   
+  this.resetthesellingbutton();
    console.log("Successfully Sold "+this.name+"!")
    } else {
    console.log("Sorry, You have no "+this.name+"s; you have "+this.amount+" of these.");
@@ -33,7 +33,9 @@ function treasureitem(id, name, price, rarity, texture){
    this.display = "<div class=container><div class=inventoryitem id=inventoryitem title="+this.name+" ><img src="+this.texture+" width=64px /><div class=itemtext style=font-size:10px >"+this.displayamount()+"</div></div></div>";
    this.addme = function(){$("#inventoryhtml").append(this.display)}
    this.recieve = function(){
+     for (i=0; i<100; i++){
       this.amount += 1;
+     }
       alltreasure.forEach(function(item){item.resetthesellingbutton()})
    }
    this.save = function(){
