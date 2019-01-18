@@ -34,7 +34,7 @@ function treasureitem(id, name, price, rarity, texture){
    this.addme = function(){$("#inventoryhtml").append(this.display)}
    this.recieve = function(){
       this.amount += 1;
-      alltreasure.forEach(function(item){item.resetthesellingbutton()})
+     this.resetthesellingbutton()})
    }
    this.save = function(){
      window.localStorage.setItem(this.id,this.amount)
